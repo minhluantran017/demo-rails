@@ -1,0 +1,42 @@
+version: '3'
+services:
+  setup:
+    build: .
+    depends_on:
+      - db
+    environment:
+      - RAILS_ENV=development
+    command: "bin/rails db:migrate"
+  db:
+    image: postgres:9.6-alpine
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=mysecurepass
+      - POSTGRES_DB=demo_rails_development
+      - PGDATA=/var/lib/postgresql/data
+  db_data:
+    image: postgres:9.6-alpine
+    volumes:
+      - /var/lib/postgresql/data
+    command: "/bin/true"
+  sidekiq:
+    build: .
+    environment:
+      - REDIS_URL=redis
+      - REDIS_PORT=6379
+    depends_on:
+      - redis
+    command: "bin/bundle exec sidekiq -C config/sidekiq.yml"
+  redis:
+    image: redis:4.0-alpine
+    ports:
+      - "6379:6379"
+  web:
+    build: .
+    command: "bin/bundle exec rails s -p 3000 -b 0.0.0.0"
+    volumes:
+      - .:/myapp
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
