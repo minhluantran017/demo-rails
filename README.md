@@ -1,24 +1,82 @@
-# README
+# demo-rails
+Demo Ruby on Rails micro-services application on Kubernetes environment.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+Tags:
+[![](https://img.shields.io/badge/Owner-minhluantran017-darkviolet)](mailto:minhluantran017@gmail.com)
+![](https://img.shields.io/badge/-DevOps-magenta)
+![](https://img.shields.io/badge/-microservices-brightgreen)
+![](https://img.shields.io/badge/-Ruby-red)
+![](https://img.shields.io/badge/-Rails-orange)
+![](https://img.shields.io/badge/-Kubernetes-blue)
 
-* Ruby version
+***PROJECT STATUS:***
 
-* System dependencies
 
-* Configuration
+- [x] Development
+- [x] Building and Packaging
+- [x] Deployment
+- [ ] Testing
 
-* Database creation
+## Getting Started
 
-* Database initialization
+### Prerequisites
 
-* How to run the test suite
+* Docker
 
-* Services (job queues, cache servers, search engines, etc.)
+### Cloning code
 
-* Deployment instructions
+```sh
+git clone https://github.com/minhluantran017/demo-rails.git
+cd demo-rails
+```
 
-* ...
+### Building
+
+TODO
+
+### Deploying application
+
+#### Local machine
+
+```sh
+docker-compose up
+```
+
+Navigate to this URL in your browser to verify:
+```console
+http://localhost:3000
+```
+
+To tear down:
+
+```sh
+docker-compose down
+```
+
+#### Kubernetes cluster
+
+TODO
+
+### Running tests
+
+TODO
+
+## CI/CD integration
+
+TODO
+
+## Branching
+
+* **master** - *Master branch*
+* **dev** - *Dev branch for development and testing*
+
+## Authors
+
+* **Luan Tran** - *Owner* - [Github](https://github.com/minhluantran017) - [Email](mailto:minhluantran017@gmail.com)
+
+## License
+
+This project has no license.
+
+But if you decide to fork or get idea from this, feel free to :star: me. Thanks :wink:
